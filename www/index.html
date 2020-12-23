@@ -110,37 +110,42 @@ TestDataClass
 showResults(results);
 })
 }
-function addDEF() {
-  int leve=0;
-let level = parseInt($("#level").val(), 10);
+
+function searchAttack() {
+let attack = parseInt($("#attack").val(), 10);
 let TestDataClass = ncmb.DataStore(db);
 TestDataClass
-.equalTo("level", level)
+.equalTo("attack", attack)
 .fetchAll()
 .then(function(results) {
 showResults(results);
 })
 }
-function addLevel() {
-let level = parseInt($("#level").val(), 10);
+
+function searchattackLT() {
+let attack = parseInt($("#attack").val(), 10);
 let TestDataClass = ncmb.DataStore(db);
 TestDataClass
-.lessThan("level", level)
+.lessThan("attack", attack)
 .fetchAll()
 .then(function(results) {
 showResults(results);
 })
 }
-function addATK() {
-let level = parseInt($("#level").val(), 10);
+
+
+function searchAttacklGT() {
+let attack = parseInt($("#attack").val(), 10);
 let TestDataClass = ncmb.DataStore(db);
 TestDataClass
-.lessThan("level", level)
+.greaterThan("attack", attack)
 .fetchAll()
 .then(function(results) {
 showResults(results);
 })
 }
+
+
     </script>
 </head>
 <body>
@@ -157,10 +162,7 @@ showResults(results);
     <label for="name">attack:</label>
     <input id="attack" type="text" placeholder="ATK">
   </div>
-   <div>
-    <label for="name">defence:</label>
-    <input id="defence" type="text" placeholder="DEF">
-  </div>
+   
   <div id="button">
     <button class="btn" onclick="fetchAll()">Fetch All</button>
     <button class="btn" onclick="searchName()">Name</button>
@@ -168,10 +170,10 @@ showResults(results);
 <button class="btn" onclick="searchLevelLT()">Level &lt</button>
     <button class="btn" onclick="searchLevel()">Level</button>
     <button class="btn" onclick="searchLevelGT()">Level &gt</button>
-    <button class="btn" onclick="addLevel()">Lvl Total</button>
+    <button class="btn" onclick="searchattackLT()"> attack &lt</button>
 
-    <button class="btn" onclick="addATK()"> ATK Total</button>
-<button class="btn" onclick="addDEF()">DEFTotal</button>
+    <button class="btn" onclick="searchAttack()"> attack</button>
+<button class="btn" onclick="searchAttacklGT()">attack></button>
   </div>
   <div id="message">initializing...</div>
 </body>
