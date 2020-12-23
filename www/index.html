@@ -111,10 +111,11 @@ showResults(results);
 })
 }
 function addDEF() {
+  int leve=0;
 let level = parseInt($("#level").val(), 10);
 let TestDataClass = ncmb.DataStore(db);
 TestDataClass
-.lessThan("level", level)
+.equalTo("level", level)
 .fetchAll()
 .then(function(results) {
 showResults(results);
@@ -145,12 +146,20 @@ showResults(results);
 <body>
   <h1>Ship search</h1>
   <div>
-    <label for="name">name:</label>
+    <label for="name">Name:</label>
     <input id="name" type="text" placeholder="Ship name">
   </div>
   <div>
     <label for="level">level:</label>
     <input id="level" type="number" placeholder="Ship level">
+  </div>
+   <div>
+    <label for="name">attack:</label>
+    <input id="attack" type="text" placeholder="ATK">
+  </div>
+   <div>
+    <label for="name">defence:</label>
+    <input id="defence" type="text" placeholder="DEF">
   </div>
   <div id="button">
     <button class="btn" onclick="fetchAll()">Fetch All</button>
