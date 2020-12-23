@@ -110,10 +110,40 @@ TestDataClass
 showResults(results);
 })
 }
+function addDEF() {
+let level = parseInt($("#level").val(), 10);
+let TestDataClass = ncmb.DataStore(db);
+TestDataClass
+.lessThan("level", level)
+.fetchAll()
+.then(function(results) {
+showResults(results);
+})
+}
+function addLevel() {
+let level = parseInt($("#level").val(), 10);
+let TestDataClass = ncmb.DataStore(db);
+TestDataClass
+.lessThan("level", level)
+.fetchAll()
+.then(function(results) {
+showResults(results);
+})
+}
+function addATK() {
+let level = parseInt($("#level").val(), 10);
+let TestDataClass = ncmb.DataStore(db);
+TestDataClass
+.lessThan("level", level)
+.fetchAll()
+.then(function(results) {
+showResults(results);
+})
+}
     </script>
 </head>
 <body>
-  <h1>mBaaS search</h1>
+  <h1>Ship search</h1>
   <div>
     <label for="name">name:</label>
     <input id="name" type="text" placeholder="Ship name">
@@ -129,10 +159,10 @@ showResults(results);
 <button class="btn" onclick="searchLevelLT()">Level &lt</button>
     <button class="btn" onclick="searchLevel()">Level</button>
     <button class="btn" onclick="searchLevelGT()">Level &gt</button>
-    <button class="btn" onclick="searchLevelGT()">Lvl Total</button>
+    <button class="btn" onclick="addLevel()">Lvl Total</button>
 
-    <button class="btn" onclick="searchLevelGT()"> ATK Total</button>
-<button class="btn" onclick="searchLevelGT()">DEFTotal</button>
+    <button class="btn" onclick="addATK()"> ATK Total</button>
+<button class="btn" onclick="addDEF()">DEFTotal</button>
   </div>
   <div id="message">initializing...</div>
 </body>
